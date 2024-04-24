@@ -8,7 +8,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 
 try {
-    const connect =mongoose.connect("mongodb://localhost:27017/shorturl")
+    const connect =mongoose.connect("mongodb+srv://ManojGowda:Manoj2002@cluster0.lqo2toa.mongodb.net//shorturl")
     if(connect){
 
         console.log("mongoose connected")
