@@ -6,6 +6,7 @@ const app = express();
 const morgan = require("morgan");
 const path = require("path");
 const mongoose = require("mongoose");
+const PORT = process.env.PORT || 3000;
 
 try {
     const connect =mongoose.connect("mongodb+srv://ManojGowda:Manoj2002@cluster0.lqo2toa.mongodb.net//shorturl")
@@ -90,4 +91,4 @@ app.get("/",(req, res) =>{
 })
 
 
-app.listen(8080, () => console.log("listening on port 3000"));
+app.listen(PORT, () => console.log("listening on port 3000"));
