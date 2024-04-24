@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script.
+      function copyToClipboard(text) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val(text).select();
+        document.execCommand("copy");
+        $temp.remove();
+        alert("Copied to clipboard: " + text);
+      }
+    style.
+      body {
+        background-color: #343a40;
+        color: white;
+      }
+      .redirect-message {
+        display: none;
+      }
+      /* Override color for text elements */
+      h1, p {
+        color: black;
+      }
+  body
+    .container
+      .jumbotron.mt-5
+        h1.display-4 User Already Exists
+        h1 
+          span#short-url(style="cursor: pointer;" onclick="copyurl()") Short URL: #{surl}
+        h1 
+          span#your-url(style="cursor: pointer;" onclick="copysurl()") Your URL: #{url}
+        p.lead Your link Already Exists Click to copy.
+        script.
+          function copyurl(){
+            const url = "#{surl}";
+            copyToClipboard(url);
+          }
+          function copysurl(){
+            const url = "#{url}";
+            copyToClipboard(url);
+          }
+      a.btn.btn-primary(href="/") Go back

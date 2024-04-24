@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+html
+  head
+    title= title
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+  body.bg-dark.text-light
+    div.container.mt-4
+      center
+        h3 Create a new short URL
+      form(action="/create", method="POST")
+        .form-group
+          label(for="surl") Name to be short:
+          input.form-control(type="text", id="surl", name="surl", placeholder="Enter a short name", required)
+        .form-group
+          label(for="url") URL:
+          input.form-control(type="url", id="url", name="url", placeholder="Enter the URL", required)
+        button.btn.btn-primary(type="submit") Submit
