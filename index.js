@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3000;
 
 try {
-    const connect =mongoose.connect("mongodb+srv://ManojGowda:Manoj2002@cluster0.lqo2toa.mongodb.net//shorturl")
+    const connect =mongoose.connect("mongodb+srv://ManojGowda:Manoj2002@cluster0.lqo2toa.mongodb.net/shorturl")
     if(connect){
 
         console.log("mongoose connected")
